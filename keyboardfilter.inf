@@ -1,0 +1,38 @@
+[Version]
+Signature = "$WINDOWS NT$"
+Class = Keyboard
+ClassGuid = {4D36E96B-E325-11CE-BFC1-08002BE10318}
+Provider = %ManufacturerName%
+DriverVer = 06/05/2024,1.0.0.0
+
+[Manufacturer]
+%ManufacturerName% = Standard,NTx86,NTamd64
+
+[Standard.NTx86]
+%DeviceName% = KeyboardFilter_Inst, *PNP0303
+
+[Standard.NTamd64]
+%DeviceName% = KeyboardFilter_Inst, *PNP0303
+
+[KeyboardFilter_Inst.NT]
+CopyFiles = @KeyboardFilter.sys
+
+[KeyboardFilter_Inst.NT.Services]
+AddService = KeyboardFilter, , KeyboardFilter_Service_Inst
+
+[KeyboardFilter_Service_Inst]
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary = %12%\KeyboardFilter.sys
+
+[SourceDisksNames]
+1 = %DiskName%,,,
+
+[SourceDisksFiles]
+KeyboardFilter.sys = 1
+
+[Strings]
+ManufacturerName = "YourName"
+DeviceName = "Keyboard Filter Driver"
+DiskName = "Keyboard Filter Installation Disk"
