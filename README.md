@@ -1,4 +1,7 @@
 # keyboardfilter
+
+NOTE!! THIS IS NOT FINISHED AND MAY HAVE FLAWS, YOU MAY NEED TO EDIT THE CODE
+
 The Keyboard Filter Driver is a Windows kernel-level driver designed to intercept keyboard inputs and provide customizable handling for key events. Created by me purely because of boredom.
 Features
 
